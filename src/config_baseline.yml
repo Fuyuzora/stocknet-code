@@ -1,8 +1,8 @@
 ---
 model:
   mode: 'all'
-  variant_type: 'hedge' # hedge, tech, fund, discriminative
-  alpha: 0.5 # 0.1, 0.3, 0.5, 0.7, 0.9, 1.0
+  variant_type: 'tech' # hedge, tech, fund, discriminative
+  alpha: 0.7 # 0.1, 0.3, 0.5, 0.7, 0.9, 1.0
   dropout_vmd_in: 0.3
   dropout_mel_in: 0.3
   n_epochs: 15
@@ -59,23 +59,24 @@ dates:
   test_end_date: '2016-01-01'
 
 stocks:
-  materials: ['XOM', 'CVX', 'SLB']
-  consumer_goods: ['AAPL', 'PG', 'KO', 'PM', 'PEP', 'MO']
-  healthcare: ['JNJ', 'PFE', 'UNH', 'MRK', 'AMGN', 'MDT',]
-  services: ['AMZN', 'WMT', 'CMCSA', 'HD', 'DIS', 'MCD', 'CHTR', 'UPS']
-  utilities: ['NEE', 'DUK', 'D', 'SO', 'AEP', 'PCG', 'EXC', 'SRE']
-  finance: ['JPM', 'WFC', 'BAC', 'V', 'C', 'MA']
-  industrial_goods: ['GE', 'MMM', 'BA', 'HON', 'UTX', 'LMT', 'CAT', 'GD', 'DHR']
-  tech: ['MSFT', 'T', 'ORCL', 'VZ', 'INTC', 'CSCO']
+  materials: ['XOM', 'RDS-B', 'PTR', 'CVX', 'TOT', 'BP', 'BHP', 'SNP', 'SLB', 'BBL']
+  consumer_goods: ['AAPL', 'PG', 'BUD', 'KO', 'PM', 'TM', 'PEP', 'UN', 'UL', 'MO']
+  healthcare: ['JNJ', 'PFE', 'NVS', 'UNH', 'MRK', 'AMGN', 'MDT', 'ABBV', 'SNY', 'CELG']
+  services: ['AMZN', 'BABA', 'WMT', 'CMCSA', 'HD', 'DIS', 'MCD', 'CHTR', 'UPS', 'PCLN']
+  utilities: ['NEE', 'DUK', 'D', 'SO', 'NGG', 'AEP', 'PCG', 'EXC', 'SRE', 'PPL']
+  cong: ['IEP', 'HRG', 'CODI', 'REX', 'SPLP', 'PICO', 'AGFS', 'GMRE']
+  finance: ['BCH', 'BSAC', 'BRK-A', 'JPM', 'WFC', 'BAC', 'V', 'C', 'HSBC', 'MA']
+  industrial_goods: ['GE', 'MMM', 'BA', 'HON', 'UTX', 'LMT', 'CAT', 'GD', 'DHR', 'ABB']
+  tech: ['GOOG', 'MSFT', 'FB', 'T', 'CHL', 'ORCL', 'TSM', 'VZ', 'INTC', 'CSCO']
 
 paths:
   data: 'data/'
-  tweet_retrieved: 'articles/raw'
-  tweet_preprocessed: 'articles/preprocessed'
+  tweet_retrieved: 'tweet/raw'
+  tweet_preprocessed: 'tweet/preprocessed'
   price: 'price/preprocessed'
   res: 'res/'
   glove: 'glove.twitter.27B.50d.txt'
-  vocab_tweet: 'vocab.txt'
+  vocab_tweet: 'vocab_baseline.txt'
   graphs: 'graphs'
   checkpoints: 'checkpoints'
   log: 'log/'

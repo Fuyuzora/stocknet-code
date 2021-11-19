@@ -1,0 +1,10 @@
+rm -rf ../checkpoints/*
+rm -rf ../graphs/*
+rm -rf ../log/*
+rm ConfigLoader.pyc
+rm DataPipe.pyc
+rm Executor.pyc
+rm metrics.pyc
+rm Model.pyc
+rm neural.pyc
+rm stat_logger.pyc

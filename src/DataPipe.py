@@ -229,7 +229,15 @@ class DataPipe:
                 msg_id = 0
                 with open(msg_fp, 'r') as tweet_f:
                     for line in tweet_f:
-                        msg_dict = json.loads(line)
+                        try: 
+                            msg_dict = json.loads(line)
+                        except:
+                            logger.info(msg_fp)
+                        try: 
+                            if isinstance(msg_dict, list):
+                                msg_dict = msg_dict[0]
+                        except:
+                            logger.info(msg_fp)
                         text = msg_dict['text']
                         if not text:
                             continue
