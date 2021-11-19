@@ -3,3 +3,4 @@ checkpoints/
 graphs/
 log/
 src/__pycache__
+nltk/
